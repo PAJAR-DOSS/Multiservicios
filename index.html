@@ -5,73 +5,141 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Multiservicios Mecanica Xasique - Taller de Motos • Satipo</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --bg:#0f1724;
       --card:#f8fafc;
-      --accent:#e11d48; /* rojo moderno */
-      --accent-2:#0ea5a3; /* teal */
+      --accent:#e11d48; 
+      --accent-2:#0ea5a3; 
       --muted:#6b7280;
       font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
+
     *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(180deg,#0b1220 0%, #07101a 100%);color:#0b1220}
+    body{
+      margin:0;
+      color:white;
+      background:#0a0a0a;
+      background-image:url('https://i.imgur.com/uL9k8PV.jpg');
+      background-size:cover;
+      background-position:center;
+      background-attachment:fixed;
+    }
+
+    /* oscurecer fondo */
+    body::before{
+      content:"";
+      position:fixed;
+      top:0;left:0;width:100%;height:100%;
+      background:rgba(0,0,0,0.55);
+      z-index:-1;
+    }
+
     .container{max-width:1100px;margin:28px auto;padding:18px;}
-    header{display:flex;align-items:center;justify-content:space-between;gap:12px;color:white}
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      color:white;
+    }
+
     .brand{display:flex;align-items:center;gap:12px}
+
     .logo{
       width:68px;height:68px;border-radius:12px;display:grid;place-items:center;
       background:linear-gradient(135deg,var(--accent),#ff7a7a);color:white;font-weight:700;
       box-shadow:0 6px 18px rgba(225,29,72,.16);
     }
-    nav a{color:rgba(255,255,255,.92);text-decoration:none;margin-left:18px;font-weight:600}
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;margin-top:26px;align-items:center}
-    .hero-card{background:linear-gradient(180deg,#fff,#f7fafc);padding:26px;border-radius:14px;box-shadow:0 10px 30px rgba(2,6,23,.35)}
-    .hero h1{margin:0;font-size:28px;color:#07101a}
-    .hero p{color:var(--muted);margin:10px 0 16px}
-    .cta-row{display:flex;gap:12px;align-items:center}
-    .btn-whatsapp{
-      display:inline-flex;gap:10px;align-items:center;padding:12px 16px;background:linear-gradient(90deg,var(--accent-2),#06b6d4);
-      color:white;border-radius:10px;text-decoration:none;font-weight:700;box-shadow:0 8px 20px rgba(6,182,196,.12)
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin-left:18px;
+      font-weight:600;
     }
-    .btn-book{background:transparent;border:2px solid #e6e9ee;color:#0b1220;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
-    /* services */
-    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
-    .card-s{background:white;padding:14px;border-radius:10px;box-shadow:0 6px 18px rgba(11,17,34,.06);text-align:center}
-    .card-s h3{margin:8px 0 6px;font-size:16px}
-    .card-s p{color:var(--muted);font-size:13px}
-    /* info right */
-    .info-right{background:white;padding:20px;border-radius:12px}
-    .info-right h4{margin:0 0 8px}
-    .contact-line{display:flex;gap:10px;align-items:center;margin:8px 0}
+
+    .hero{
+      display:grid;grid-template-columns:1fr 420px;
+      gap:28px;margin-top:26px;align-items:center
+    }
+
+    .hero-card{
+      background:rgba(255,255,255,0.92);
+      padding:26px;border-radius:14px;
+      box-shadow:0 10px 30px rgba(2,6,23,.45);
+      color:#0b1220;
+    }
+
+    .hero h1{margin:0;font-size:28px;color:#0b1220}
+    .hero p{color:#333;margin:10px 0 16px}
+
+    .cta-row{display:flex;gap:12px;align-items:center}
+
+    .btn-whatsapp{
+      display:inline-flex;gap:10px;align-items:center;
+      padding:12px 16px;
+      background:linear-gradient(90deg,var(--accent-2),#06b6d4);
+      color:white;border-radius:10px;text-decoration:none;
+      font-weight:700;
+      box-shadow:0 8px 20px rgba(6,182,196,.20)
+    }
+
+    .btn-book{
+      background:transparent;border:2px solid #222;color:#0b1220;
+      padding:10px 14px;border-radius:10px;text-decoration:none;
+      font-weight:700
+    }
+
+    .services{
+      display:grid;grid-template-columns:repeat(3,1fr);
+      gap:14px;margin-top:20px
+    }
+
+    .card-s{
+      background:white;padding:14px;border-radius:10px;
+      box-shadow:0 6px 18px rgba(11,17,34,.10);
+      text-align:center;color:#0b1220
+    }
+
+    .info-right{
+      background:white;padding:20px;border-radius:12px;
+      color:#0b1220
+    }
+
+    .contact-line{display:flex;gap:10px;align-items:center;margin:8px 0;color:#0b1220}
+
     .map{width:100%;height:220px;border-radius:10px;overflow:hidden;margin-top:12px}
-    /* gallery */
+
     .gallery{display:flex;gap:8px;margin-top:16px}
-    .gallery img{width:100px;height:70px;object-fit:cover;border-radius:8px;box-shadow:0 6px 18px rgba(2,6,23,.08)}
+    .gallery img{
+      width:100px;height:70px;object-fit:cover;
+      border-radius:8px;box-shadow:0 6px 18px rgba(2,6,23,.12)
+    }
+
     footer{margin-top:34px;color:#cbd5e1;text-align:center}
+
     @media (max-width:880px){
       .hero{grid-template-columns:1fr}
       .services{grid-template-columns:repeat(2,1fr)}
       nav a{display:none}
     }
-    /* floating whatsapp bottom */
+
+    /* WhatsApp flotante */
     .float-w{
-      position:fixed;right:18px;bottom:18px;background:linear-gradient(90deg,var(--accent-2),#06b6d4);
-      color:white;padding:14px;border-radius:999px;display:flex;align-items:center;gap:10px;text-decoration:none;
-      box-shadow:0 12px 30px rgba(6,182,196,.16);font-weight:700;z-index:999;
+      position:fixed;right:18px;bottom:18px;
+      background:linear-gradient(90deg,var(--accent-2),#06b6d4);
+      color:white;padding:14px;border-radius:999px;
+      display:flex;align-items:center;gap:10px;text-decoration:none;
+      box-shadow:0 12px 30px rgba(6,182,196,.25);font-weight:700;z-index:999;
     }
+
   </style>
 </head>
-<body style="
-  background: #0f0f0f;
-  background-image: url('https://es.pinterest.com/pin/928304541915586780/');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: #ffffff;
-">
 
-
+<body>
 
   <div class="container">
     <header>
@@ -82,188 +150,153 @@
           <div style="font-size:12px;color:#cbd5e1">Taller • Motos • Satipo</div>
         </div>
       </div>
+
       <nav>
         <a href="#servicios">Servicios</a>
         <a href="#nosotros">Nosotros</a>
         <a href="#ubicacion">Ubicación</a>
         <a href="#contacto">Contacto</a>
         <a href="#mision-vision">Misión y Visión</a>
-
       </nav>
     </header>
 
-    <section class="hero" style="margin-bottom:8px">
+    <section class="hero">
+
       <div class="hero-card">
         <h1>Multiservicios Mecanica Xasique — Taller especializado en motos</h1>
-        <p>Reparación y mantenimiento profesional de motos, cuatrimotos y mototaxis. Atención a 2T y 4T, scooters y motos de competencia. Servicio rápido y garantía en mano de obra.</p>
+        <p>Reparación profesional de motos, cuatrimotos y mototaxis. Especialistas en 2T, 4T, scooters y motos de competencia.</p>
 
         <div class="cta-row">
-          <!-- WhatsApp link -->
-          <a class="btn-whatsapp" href="https://wa.me/51916876731?text=Hola%20Multiservicios Mecanica Xasique,%20necesito%20info%20sobre%20servicios" target="_blank" rel="noopener">
-            💬 Contactar por WhatsApp
-          </a>
-
+          <a class="btn-whatsapp" href="https://wa.me/51916876731?text=Hola%20Multiservicios%20Mecanica%20Xasique,%20necesito%20información" target="_blank">💬 Contactar por WhatsApp</a>
           <a class="btn-book" href="#contacto">Ver contacto</a>
         </div>
 
-        <div style="margin-top:18px;color:var(--muted);display:flex;gap:12px;flex-wrap:wrap">
+        <div style="margin-top:18px;color:#333;display:flex;gap:12px;flex-wrap:wrap">
           <div style="background:#fff;padding:8px 10px;border-radius:8px;font-weight:700">Horario: Lunes - Sábados 8:00 - 18:00</div>
-          <div style="background:#fff;padding:8px 10px;border-radius:8px">Ubicación: Multiservicios Mecanica Xasique, Q967+3HH, Óvalo de Satipo, Satipo 12260</div>
+          <div style="background:#fff;padding:8px 10px;border-radius:8px">Ubicación: Q967+3HH, Óvalo de Satipo, Satipo</div>
         </div>
 
         <div id="servicios" style="margin-top:20px">
-          <h3 style="margin:0 0 8px">Servicios destacados</h3>
+          <h3 style="margin:0 0 8px;color:#0b1220">Servicios destacados</h3>
+
           <div class="services">
-            <div class="card-s">
-              <strong>Mecánica general</strong>
-              <p>Revisión completa, afinamiento, cambio de aceite y puesta a punto.</p>
-            </div>
-            <div class="card-s">
-              <strong>Motores 2T y 4T</strong>
-              <p>Diagnóstico y reparación para todo tipo de motores.</p>
-            </div>
-            <div class="card-s">
-              <strong>Motos de competencia</strong>
-              <p>Ajustes y mantenimiento especializado para pista y off-road.</p>
-            </div>
-            <div class="card-s">
-              <strong>Cuatrimotos y mototaxis</strong>
-              <p>Reparación y mantenimiento para uso rudo y comercial.</p>
-            </div>
-            <div class="card-s">
-              <strong>Scooters & Lineales</strong>
-              <p>Soluciones rápidas para movilidad urbana.</p>
-            </div>
-            <div class="card-s">
-              <strong>Sistemas eléctricos</strong>
-              <p>Encendido, baterías, alternadores y cableado.</p>
-            </div>
+            <div class="card-s"><strong>Mecánica general</strong><p>Revisión completa, afinamiento, cambios y puesta a punto.</p></div>
+            <div class="card-s"><strong>Motores 2T / 4T</strong><p>Diagnóstico y reparación profesional.</p></div>
+            <div class="card-s"><strong>Competencia</strong><p>Ajustes para pista y off-road.</p></div>
+            <div class="card-s"><strong>Cuatrimotos / Mototaxis</strong><p>Servicio completo y repuestos.</p></div>
+            <div class="card-s"><strong>Scooters / Lineales</strong><p>Soluciones rápidas y confiables.</p></div>
+            <div class="card-s"><strong>Sistema eléctrico</strong><p>Encendido, carga y cableado.</p></div>
           </div>
         </div>
       </div>
 
       <aside class="info-right">
-        <h4>Contacto rápido</h4>
-        <div class="contact-line"><strong>WhatsApp:</strong> <a href="https://wa.me/51916876731?text=Hola%20Multiservicios Mecanica Xasique" target="_blank">+51 916 876 731</a></div>
-        <div class="contact-line"><strong>Dirección:</strong> Multiservicios Mecanica Xasique, Q967+3HH, Óvalo de Satipo, Satipo 12260, Satipo, Junín</div>
+        <h4 style="color:#0b1220">Contacto rápido</h4>
+
+        <div class="contact-line"><strong>WhatsApp:</strong> <a href="https://wa.me/51916876731" target="_blank">+51 916 876 731</a></div>
+        <div class="contact-line"><strong>Dirección:</strong> Q967+3HH, Óvalo de Satipo, Satipo</div>
         <div class="contact-line"><strong>Atención:</strong> Lunes - Sábados 8:00 - 18:00</div>
 
         <div class="map" id="ubicacion">
-          <!-- Reemplaza el src por tu URL de Google Maps (embed) si quieres exacto -->
           <iframe width="100%" height="100%" frameborder="0" style="border:0"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.0000000000005!2d-75.00000000000001!3d-11.000000000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTAwwrAwJzAwLjAiUyA3NcKwMDAnMDAuMCJX!5e0!3m2!1ses!2spe!4v1600000000000!5m2!1ses!2spe"
-            allowfullscreen aria-hidden="false" tabindex="0"></iframe>
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900!2d-75!3d-11!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5m2!1ses!2spe"
+            allowfullscreen></iframe>
         </div>
 
         <div style="margin-top:14px">
-          <h4>Galería</h4>
+          <h4 style="color:#0b1220">Galería</h4>
           <div class="gallery">
-            <img src="https://via.placeholder.com/200x120?text=Motor+servicio" alt="serv1">
-            <img src="https://via.placeholder.com/200x120?text=Afinamiento" alt="serv2">
-            <img src="https://via.placeholder.com/200x120?text=Electricidad" alt="serv3">
-            <img src="https://via.placeholder.com/200x120?text=Competencia" alt="serv4">
+            <img src="https://via.placeholder.com/200x120?text=Foto+1">
+            <img src="https://via.placeholder.com/200x120?text=Foto+2">
+            <img src="https://via.placeholder.com/200x120?text=Foto+3">
+            <img src="https://via.placeholder.com/200x120?text=Foto+4">
           </div>
         </div>
       </aside>
     </section>
 
-    <section id="nosotros" style="margin-top:16px;background:white;padding:18px;border-radius:12px">
+    <section id="nosotros" style="margin-top:16px;background:white;padding:18px;border-radius:12px;color:#0b1220">
       <h3>Sobre Multiservicios Mecanica Xasique</h3>
-      <p style="color:var(--muted)">Somos un taller familiar en Satipo con experiencia en motos de calle y competencia. Nos enfocamos en la calidad, tiempos de entrega y la seguridad de tu vehículo. Ofrecemos diagnósticos claros y presupuestos honestos.</p>
+      <p style="color:#555">Taller familiar con experiencia en motos de calle y competencia. Calidad, honestidad y garantía en cada trabajo.</p>
 
       <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px">
         <div style="background:#f8fafc;padding:12px;border-radius:8px;flex:1">
           <strong>Garantía</strong>
-          <p style="margin:6px 0;color:var(--muted)">30 días en mano de obra.</p>
+          <p style="margin:6px 0;color:#666">30 días en mano de obra.</p>
         </div>
         <div style="background:#f8fafc;padding:12px;border-radius:8px;flex:1">
           <strong>Repuestos</strong>
-          <p style="margin:6px 0;color:var(--muted)">Trabajamos con repuestos originales y alternativas confiables.</p>
+          <p style="margin:6px 0;color:#666">Trabajo con repuestos originales y alternativos confiables.</p>
         </div>
       </div>
     </section>
-<section id="mision-vision" style="margin-top:40px;background:white;padding:20px;border-radius:12px">
-  <h2 style="text-align:center;margin-bottom:16px">Misión y Visión</h2>
 
-  <div style="display:flex;gap:20px;flex-wrap:wrap">
-    
-    <!-- Misión -->
-    <div style="flex:1;min-width:260px;background:#f5f8fc;padding:16px;border-radius:12px">
-      <h3>Misión</h3>
-      <p style="color:#555;">
-        Brindar servicios de mecánica confiables, rápidos y de calidad para todo tipo de motocicletas, 
-        garantizando seguridad y tranquilidad a nuestros clientes mediante un trabajo honesto, técnico 
-        y profesional.
-      </p>
-    </div>
+    <section id="mision-vision" style="margin-top:40px;background:white;padding:20px;border-radius:12px;color:#0b1220">
+      <h2 style="text-align:center;margin-bottom:16px">Misión y Visión</h2>
 
-    <!-- Visión -->
-    <div style="flex:1;min-width:260px;background:#f5f8fc;padding:16px;border-radius:12px">
-      <h3>Visión</h3>
-      <p style="color:#555;">
-        Ser el taller de motos líder en Satipo y la región, reconocido por nuestra excelencia técnica, 
-        trato humano, innovación constante y compromiso con el bienestar y seguridad de cada motociclista.
-      </p>
-    </div>
+      <div style="display:flex;gap:20px;flex-wrap:wrap">
+        <div style="flex:1;min-width:260px;background:#f5f8fc;padding:16px;border-radius:12px">
+          <h3>Misión</h3>
+          <p style="color:#555">Brindar servicios de mecánica confiables, rápidos y profesionales para garantizar seguridad y satisfacción.</p>
+        </div>
 
-  </div>
-</section>
+        <div style="flex:1;min-width:260px;background:#f5f8fc;padding:16px;border-radius:12px">
+          <h3>Visión</h3>
+          <p style="color:#555">Ser el taller líder de Satipo y la región, reconocidos por la excelencia técnica y trato humano.</p>
+        </div>
+      </div>
+    </section>
 
     <section id="contacto" style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
-      <div style="flex:1;background:white;padding:16px;border-radius:10px">
+
+      <div style="flex:1;background:white;padding:16px;border-radius:10px;color:#0b1220">
         <h3>Contacta y pide tu presupuesto</h3>
-        <form action="#" onsubmit="alert('Formulario de ejemplo — use WhatsApp o llama al +51 916 876 731');return false">
+
+        <form onsubmit="return false;">
           <div style="display:flex;gap:8px;flex-wrap:wrap">
             <input id="nombre" required placeholder="Tu nombre" style="flex:1;padding:10px;border-radius:8px;border:1px solid #e6eef6">
-
-<input id="telefono" required placeholder="Teléfono" style="flex:1;padding:10px;border-radius:8px;border:1px solid #e6eef6">
+            <input id="telefono" required placeholder="Teléfono" style="flex:1;padding:10px;border-radius:8px;border:1px solid #e6eef6">
           </div>
-<textarea id="mensaje" required placeholder="Describe el problema / servicio" style="width:100%;margin-top:8px;padding:10px;border-radius:8px;border:1px solid #e6eef6;height:110px"></textarea>          <div style="margin-top:8px;display:flex;gap:8px">
-<button class="btn-whatsapp" type="button" onclick="enviarWhatsApp()">Enviar</button>
-            <a class="btn-book" href="https://wa.me/51916876731?text=Hola%20Multiservicios Mecanica Xasique%2C%20quiero%20un%20presupuesto" target="_blank">Contactar por WhatsApp</a>
+
+          <textarea id="mensaje" required placeholder="Describe el problema / servicio" style="width:100%;margin-top:8px;padding:10px;border-radius:8px;border:1px solid #e6eef6;height:110px"></textarea>
+
+          <div style="margin-top:8px;display:flex;gap:8px">
+            <button class="btn-whatsapp" type="button" onclick="enviarWhatsApp()">Enviar por WhatsApp</button>
+            <a class="btn-book" href="https://wa.me/51916876731" target="_blank">Abrir chat</a>
           </div>
         </form>
       </div>
 
-      <div style="width:320px;background:white;padding:16px;border-radius:10px">
+      <div style="width:320px;background:white;padding:16px;border-radius:10px;color:#0b1220">
         <h3>Contacto directo</h3>
-        <p style="color:var(--muted)"><strong>WhatsApp:</strong> <a href="https://wa.me/51916876731" target="_blank">+51 916 876 731</a></p>
-        <p style="color:var(--muted)"><strong>Dirección:</strong> Multiservicios Mecanica Xasique, Q967+3HH, Óvalo de Satipo, Satipo 12260</p>
-        <p style="color:var(--muted)"><strong>Horario:</strong> Lunes - Sábados 8:00 - 18:00</p>
-        <p style="color:var(--muted)"><strong>Precios:</strong> Revisiones desde S/20 (consultar)</p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/51916876731" target="_blank">+51 916 876 731</a></p>
+        <p><strong>Dirección:</strong> Q967+3HH, Óvalo de Satipo, Satipo 12260</p>
+        <p><strong>Horario:</strong> Lunes - Sábados 8:00 - 18:00</p>
+        <p><strong>Precios:</strong> Revisiones desde S/20 (consultar)</p>
       </div>
     </section>
-<script>
-function enviarWhatsApp() {
-    let nombre = document.getElementById("nombre").value.trim();
-    let telefono = document.getElementById("telefono").value.trim();
-    let mensaje = document.getElementById("mensaje").value.trim();
 
-    let numero = "51916876731"; 
+    <script>
+      function enviarWhatsApp() {
+        let nombre = document.getElementById("nombre").value.trim();
+        let telefono = document.getElementById("telefono").value.trim();
+        let mensaje = document.getElementById("mensaje").value.trim();
+        let numero = "51916876731";
 
-    let texto = `Hola, soy ${nombre}. Mi número es ${telefono}. Quiero consultar lo siguiente: ${mensaje}`;
-
-    let url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
-
-    window.open(url, "_blank");
-}
-</script>
+        let texto = `Hola, soy ${nombre}. Mi número es ${telefono}. Consulta: ${mensaje}`;
+        let url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+        window.open(url, "_blank");
+      }
+    </script>
 
     <footer>
-      <div style="color:#94a3b8">© Multiservicios Mecanica Xasique • Taller de Motos — Satipo</div>
+      <div style="color:#cbd5e1">© Multiservicios Mecanica Xasique • Taller de Motos — Satipo</div>
     </footer>
   </div>
 
-  <a class="float-w" href="https://wa.me/51916876731?text=Hola%20Multiservicios Mecanica Xasique%2C%20necesito%20info" target="_blank">
+  <a class="float-w" href="https://wa.me/51916876731?text=Hola%20necesito%20información" target="_blank">
     💬 WhatsApp • +51 916 876 731
   </a>
 
 </body>
 </html>
-
-
-
-
-
-
-
