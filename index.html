@@ -176,12 +176,12 @@
         <h3>Contacta y pide tu presupuesto</h3>
         <form action="#" onsubmit="alert('Formulario de ejemplo — use WhatsApp o llama al +51 916 876 731');return false">
           <div style="display:flex;gap:8px;flex-wrap:wrap">
-            <input required placeholder="Tu nombre" style="flex:1;padding:10px;border-radius:8px;border:1px solid #e6eef6">
-            <input required placeholder="Teléfono" style="flex:1;padding:10px;border-radius:8px;border:1px solid #e6eef6">
+            <input id="nombre" required placeholder="Tu nombre" style="flex:1;padding:10px;border-radius:8px;border:1px solid #e6eef6">
+
+<input id="telefono" required placeholder="Teléfono" style="flex:1;padding:10px;border-radius:8px;border:1px solid #e6eef6">
           </div>
-          <textarea required placeholder="Describe el problema / servicio" style="width:100%;margin-top:8px;padding:10px;border-radius:8px;border:1px solid #e6eef6;height:110px"></textarea>
-          <div style="margin-top:8px;display:flex;gap:8px">
-            <button class="btn-whatsapp" type="submit">Enviar</button>
+<textarea id="mensaje" required placeholder="Describe el problema / servicio" style="width:100%;margin-top:8px;padding:10px;border-radius:8px;border:1px solid #e6eef6;height:110px"></textarea>          <div style="margin-top:8px;display:flex;gap:8px">
+<button class="btn-whatsapp" type="button" onclick="enviarWhatsApp()">Enviar</button>
             <a class="btn-book" href="https://wa.me/51916876731?text=Hola%20Multiservicios Mecanica Xasique%2C%20quiero%20un%20presupuesto" target="_blank">Contactar por WhatsApp</a>
           </div>
         </form>
@@ -195,6 +195,21 @@
         <p style="color:var(--muted)"><strong>Precios:</strong> Revisiones desde S/20 (consultar)</p>
       </div>
     </section>
+<script>
+function enviarWhatsApp() {
+    let nombre = document.getElementById("nombre").value.trim();
+    let telefono = document.getElementById("telefono").value.trim();
+    let mensaje = document.getElementById("mensaje").value.trim();
+
+    let numero = "51916876731"; 
+
+    let texto = `Hola, soy ${nombre}. Mi número es ${telefono}. Quiero consultar lo siguiente: ${mensaje}`;
+
+    let url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+
+    window.open(url, "_blank");
+}
+</script>
 
     <footer>
       <div style="color:#94a3b8">© Multiservicios Mecanica Xasique • Taller de Motos — Satipo</div>
@@ -207,4 +222,5 @@
 
 </body>
 </html>
+
 
