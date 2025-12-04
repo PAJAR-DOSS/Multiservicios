@@ -4,16 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Multiservicios Mecanica Xasique - Taller de Motos • Satipo</title>
-<link rel="icon" type="image/jpeg" href="favicon.png">
+  <link rel="icon" type="image/jpeg" href="favicon.png">
 
   <style>
     :root{
       --bg:#0f1724;
       --card:#f8fafc;
-      --accent:#e11d48; 
-      --accent-2:#0ea5a3; 
+      --accent:#e11d48;
+      --accent-2:#0ea5a3;
       --muted:#6b7280;
-      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial;
     }
 
     *{box-sizing:border-box}
@@ -21,13 +21,12 @@
       margin:0;
       color:white;
       background:#0a0a0a;
-background-image: url('https://i.imgur.com/o3NO7Fm.jpeg');
+      background-image:url('https://i.imgur.com/o3NO7Fm.jpeg');
       background-size:cover;
       background-position:center;
       background-attachment:fixed;
     }
 
-    /* oscurecer fondo */
     body::before{
       content:"";
       position:fixed;
@@ -50,8 +49,10 @@ background-image: url('https://i.imgur.com/o3NO7Fm.jpeg');
 
     .logo{
       width:68px;height:68px;border-radius:12px;display:grid;place-items:center;
-      background:linear-gradient(135deg,var(--accent),#ff7a7a);color:white;font-weight:700;
+      background:linear-gradient(135deg,var(--accent),#ff7a7a);
+      color:white;font-weight:700;
       box-shadow:0 6px 18px rgba(225,29,72,.16);
+      font-size:32px;
     }
 
     nav a{
@@ -121,27 +122,26 @@ background-image: url('https://i.imgur.com/o3NO7Fm.jpeg');
 
     footer{margin-top:34px;color:#cbd5e1;text-align:center}
 
-    @media (max-width:880px){
+    @media(max-width:880px){
       .hero{grid-template-columns:1fr}
       .services{grid-template-columns:repeat(2,1fr)}
       nav a{display:none}
     }
 
-    /* WhatsApp flotante */
     .float-w{
       position:fixed;right:18px;bottom:18px;
       background:linear-gradient(90deg,var(--accent-2),#06b6d4);
       color:white;padding:14px;border-radius:999px;
       display:flex;align-items:center;gap:10px;text-decoration:none;
-      box-shadow:0 12px 30px rgba(6,182,196,.25);font-weight:700;z-index:999;
+      box-shadow:0 12px 30px rgba(6,182,196,.25);
+      font-weight:700;z-index:999;
     }
-
   </style>
 </head>
 
 <body>
-
   <div class="container">
+
     <header>
       <div class="brand">
         <div class="logo">C</div>
@@ -163,8 +163,8 @@ background-image: url('https://i.imgur.com/o3NO7Fm.jpeg');
     <section class="hero">
 
       <div class="hero-card">
-        <h1>Multiservicios Mecanica Xasique — Taller especializado en motos</h1>
-        <p>Reparación profesional de motos, cuatrimotos y mototaxis. Especialistas en 2T, 4T, scooters y motos de competencia.</p>
+        <h1>Multiservicios Mecanica Xasique — Taller especializado en motos y maquinaria</h1>
+        <p>Profesionales en motos, cuatrimotos, scooters, mototaxis, generadores, fumigadoras y motos de competencia.</p>
 
         <div class="cta-row">
           <a class="btn-whatsapp" href="https://wa.me/51916876731?text=Hola%20Multiservicios%20Mecanica%20Xasique,%20necesito%20información" target="_blank">💬 Contactar por WhatsApp</a>
@@ -180,12 +180,52 @@ background-image: url('https://i.imgur.com/o3NO7Fm.jpeg');
           <h3 style="margin:0 0 8px;color:#0b1220">Servicios destacados</h3>
 
           <div class="services">
-            <div class="card-s"><strong>Mecánica general</strong><p>Revisión completa, afinamiento, cambios y puesta a punto.</p></div>
-            <div class="card-s"><strong>Motores 2T / 4T</strong><p>Diagnóstico y reparación profesional.</p></div>
-            <div class="card-s"><strong>Competencia</strong><p>Ajustes para pista y off-road.</p></div>
-            <div class="card-s"><strong>Cuatrimotos / Mototaxis</strong><p>Servicio completo y repuestos.</p></div>
-            <div class="card-s"><strong>Scooters / Lineales</strong><p>Soluciones rápidas y confiables.</p></div>
-            <div class="card-s"><strong>Sistema eléctrico</strong><p>Encendido, carga y cableado.</p></div>
+
+            <div class="card-s">
+              <strong>Mecánica general</strong>
+              <p>Mantenimiento completo, diagnóstico, afinamiento y puesta a punto profesional.</p>
+            </div>
+
+            <div class="card-s">
+              <strong>Motores 2T / 4T</strong>
+              <p>Reparación avanzada, carburación, rectificación, sincronización y armado experto.</p>
+            </div>
+
+            <div class="card-s">
+              <strong>Motos de competencia</strong>
+              <p>Ajustes para pista y off-road, suspensiones Ohlins, calibraciones y preparación PRO.</p>
+            </div>
+
+            <div class="card-s">
+              <strong>Cuatrimotos / Mototaxis</strong>
+              <p>Servicio completo de motor, transmisión, dirección, frenos y sistema eléctrico.</p>
+            </div>
+
+            <div class="card-s">
+              <strong>Scooters / Lineales</strong>
+              <p>Variador, embrague, rodajes, banda, motor automático, mantenimiento rápido.</p>
+            </div>
+
+            <div class="card-s">
+              <strong>Sistema eléctrico</strong>
+              <p>Encendido, CDI, carga, luces, alternadores, cableado y fallas intermitentes.</p>
+            </div>
+
+            <div class="card-s">
+              <strong>Generadores / Fumigadoras</strong>
+              <p>GX120–390, 2T, 4T, motosierras, macheteadoras y motores estacionarios.</p>
+            </div>
+
+            <div class="card-s">
+              <strong>Suspensiones</strong>
+              <p>Retenes, aceite, purga, calibración exacta y presurización con herramientas PRO.</p>
+            </div>
+
+            <div class="card-s">
+              <strong>Repuestos y pedidos</strong>
+              <p>Honda, Yamaha, Suzuki y motos chinas. Pedidos del extranjero.</p>
+            </div>
+
           </div>
         </div>
       </div>
@@ -198,7 +238,9 @@ background-image: url('https://i.imgur.com/o3NO7Fm.jpeg');
         <div class="contact-line"><strong>Atención:</strong> Lunes - Sábados 8:00 - 18:00</div>
 
         <div class="map" id="ubicacion">
-         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.2905903551436!2d-74.63771037413802!3d-11.240020788938297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910bc10012c1256d%3A0x957cfa9c7848623f!2sMultiservicios%20Mecanica%20Xasique!5e0!3m2!1ses!2spe!4v1764819389161!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.2905903551436!2d-74.63771037413802!3d-11.240020788938297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910bc10012c1256d%3A0x957cfa9c7848623f!2sMultiservicios%20Mecanica%20Xasique!5e0!3m2!1ses!2spe!4v1764819389161!5m2!1ses!2spe"
+            width="600" height="450" style="border:0;" allowfullscreen loading="lazy">
+          </iframe>
         </div>
 
         <div style="margin-top:14px">
@@ -208,24 +250,40 @@ background-image: url('https://i.imgur.com/o3NO7Fm.jpeg');
             <img src="https://www.stihl.pe/content/dam/stihl/media/pim/7786.jpg">
             <img src="https://www.stihl.pe/content/dam/stihl/media/pim/39278.jpg">
             <img src="https://pf.honda.com.pe/wp-content/uploads/2023/08/MOTOR-GX120.png">
-
           </div>
         </div>
       </aside>
+
     </section>
 
     <section id="nosotros" style="margin-top:16px;background:white;padding:18px;border-radius:12px;color:#0b1220">
       <h3>Sobre Multiservicios Mecanica Xasique</h3>
-      <p style="color:#555">Taller familiar con experiencia en motos de calle y competencia. Calidad, honestidad y garantía en cada trabajo.</p>
+
+      <p style="color:#555">
+        Somos un taller especializado con amplia experiencia en motos de calle, motos de competencia, scooters,
+        cuatrimotos, mototaxis y maquinaria ligera como generadores, fumigadoras, motosierras y macheteadoras.
+        Ofrecemos un servicio honesto, confiable y profesional, respaldado por equipamiento técnico y herramientas
+        especializadas para calibraciones exactas, suspensiones y diagnósticos avanzados.
+      </p>
+
+      <p style="color:#555;margin-top:10px">
+        Contamos con un taller amplio y equipado, lavado con hidrolavadora incorporado, repuestos en stock
+        y posibilidad de realizar pedidos del extranjero. Nos enfocamos en soluciones duraderas y trabajos
+        de alta precisión con garantía.
+      </p>
 
       <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px">
         <div style="background:#f8fafc;padding:12px;border-radius:8px;flex:1">
           <strong>Garantía</strong>
-          <p style="margin:6px 0;color:#666">30 días en mano de obra.</p>
+          <p style="margin:6px 0;color:#666">Hasta 30 días de garantía en mano de obra.</p>
         </div>
         <div style="background:#f8fafc;padding:12px;border-radius:8px;flex:1">
           <strong>Repuestos</strong>
-          <p style="margin:6px 0;color:#666">Trabajo con repuestos originales y alternativos confiables.</p>
+          <p style="margin:6px 0;color:#666">Repuestos originales y alternativos de alta calidad.</p>
+        </div>
+        <div style="background:#f8fafc;padding:12px;border-radius:8px;flex:1">
+          <strong>Atención profesional</strong>
+          <p style="margin:6px 0;color:#666">Trato directo, honesto y soluciones reales.</p>
         </div>
       </div>
     </section>
@@ -234,15 +292,26 @@ background-image: url('https://i.imgur.com/o3NO7Fm.jpeg');
       <h2 style="text-align:center;margin-bottom:16px">Misión y Visión</h2>
 
       <div style="display:flex;gap:20px;flex-wrap:wrap">
+
         <div style="flex:1;min-width:260px;background:#f5f8fc;padding:16px;border-radius:12px">
           <h3>Misión</h3>
-          <p style="color:#555">Brindar servicios de mecánica confiables, rápidos y profesionales para garantizar seguridad y satisfacción.</p>
+          <p style="color:#555">
+            Brindar un servicio de mecánica integral, preciso y confiable para motocicletas y maquinaria,
+            garantizando la seguridad, el rendimiento y la satisfacción total de nuestros clientes.
+            Nos comprometemos a trabajar con transparencia, responsabilidad y técnicas
+            profesionales que aseguren resultados de primer nivel.
+          </p>
         </div>
 
         <div style="flex:1;min-width:260px;background:#f5f8fc;padding:16px;border-radius:12px">
           <h3>Visión</h3>
-          <p style="color:#555">Ser el taller líder de Satipo y la región, reconocidos por la excelencia técnica y trato humano.</p>
+          <p style="color:#555">
+            Ser el taller mecánico líder en Satipo y la región, reconocidos por nuestra excelencia técnica,
+            innovación, equipamiento profesional y calidad humana. Aspiramos a expandir nuestras capacidades,
+            ofreciendo un estándar de servicio comparable a los mejores talleres del país.
+          </p>
         </div>
+
       </div>
     </section>
 
@@ -299,10 +368,3 @@ background-image: url('https://i.imgur.com/o3NO7Fm.jpeg');
 
 </body>
 </html>
-
-
-
-
-
-
-
